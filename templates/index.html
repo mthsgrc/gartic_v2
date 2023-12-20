@@ -4,7 +4,7 @@
 
     <form action="/filter" method="get">
         <input type="text" name="sWord" > 
-        {# <button type="submit">Search</button> #}
+        <button type="reset">Clear</button>
     </form>
 
     <div class="list-of-words">
@@ -13,6 +13,7 @@
         {% endfor %}
     </div>
 
+    {# Asynchronous search of the words #}
     <script>
         let input = document.querySelector("input");
         input.addEventListener('input', async () =>

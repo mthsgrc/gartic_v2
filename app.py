@@ -9,3 +9,9 @@ db = SQL("sqlite:///words.db")
 def index():
     words = db.execute("SELECT * FROM words")
     return render_template("index.html", words=words)
+    
+@app.route("/filter")
+def filter():
+    word = request.args.get("sWord")
+    sWords = db.execute("SELECT * FROM words WHERE word LIKE ?", word + "%")
+    return render_template("index.html", words=sWords)

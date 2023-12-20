@@ -2,8 +2,9 @@
 
 {% block body %}
 
-    <form>
-        <input type="text"> <button>Clear</button>
+    <form action="/filter" method="get">
+        <input type="text" name="sWord" > 
+        <button type="submit">Search</button>
     </form>
 
     <div>

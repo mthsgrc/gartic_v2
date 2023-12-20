@@ -7,4 +7,5 @@ db = SQL("sqlite:///words.db")
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    words = db.execute("SELECT * FROM words")
+    return render_template("index.html", words=words)

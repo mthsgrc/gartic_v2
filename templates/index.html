@@ -2,5 +2,13 @@
 
 {% block body %}
 
-    
+    <form>
+        <input type="text"> <button>Clear</button>
+    </form>
+
+    <div>
+        {% for word in words %}
+            <span>{{ word.word }} </span>
+        {% endfor %}
+    </div>
 {% endblock body %}

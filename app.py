@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+db = SQL("sqlite:///words.db")
 
 @app.route("/")
 def index():

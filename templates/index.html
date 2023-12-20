@@ -4,12 +4,22 @@
 
     <form action="/filter" method="get">
         <input type="text" name="sWord" > 
-        <button type="submit">Search</button>
+        {# <button type="submit">Search</button> #}
     </form>
 
-    <div>
+    <div class="list-of-words">
         {% for word in words %}
             <span>{{ word.word }} </span>
         {% endfor %}
     </div>
+
+    <script>
+        let input = document.querySelector("input");
+        input.addEventListener('input', async () =>
+        {
+            let reponse = await fetch('/filter?sWord=' + input.value);
+            let words = await reponse.text();
+            document.querySelector('.list-of-words').innerHTML = words; 
+        })
+    </script>
 {% endblock body %}

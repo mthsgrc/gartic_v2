@@ -3,10 +3,10 @@
 {% block body %}
 
     <form action="/filter" method="get">
-        <input type="text" name="sWord" > 
+        <input class="sWord" name="sWord" type="text" > 
         <button type="reset">Clear</button>
     </form>
-
+    <br>  
     <div class="list-of-words">
         {% for word in words %}
             <span>{{ word.word }} </span>
@@ -16,11 +16,12 @@
     {# Asynchronous search of the words #}
     <script>
         let input = document.querySelector("input");
-        input.addEventListener('input', async () =>
+        input.addEventListener("input", async () =>
         {
-            let reponse = await fetch('/filter?sWord=' + input.value);
-            let words = await reponse.text();
-            document.querySelector('.list-of-words').innerHTML = words; 
-        })
+            let response = await fetch("/filter?sWord=" + input.value.replaceAll(" ", "_"));
+            let words = await response.text();
+            document.querySelector(".list-of-words").innerHTML = words; 
+        });
     </script>
+
 {% endblock body %}

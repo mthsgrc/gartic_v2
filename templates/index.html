@@ -10,10 +10,11 @@
         <br>  
         <div class="list-of-words">
             {% for word in words %}
-                <span>{{ word.word }} </span>
+                <span class="each-word">{{ word.word }} </span>
             {% endfor %}
         </div>
     </div>
+    
     {# Asynchronous search of the words #}
     <script>
         let input = document.querySelector("input");

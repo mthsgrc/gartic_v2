@@ -1,18 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-    <form action="/filter" method="get">
-        <input class="sWord" name="sWord" type="text" > 
-        <button type="reset">Clear</button>
-    </form>
-    <br>  
-    <div class="list-of-words">
-        {% for word in words %}
-            <span>{{ word.word }} </span>
-        {% endfor %}
+    <div class="wrapper">
+        <h1>Gartic Finder</h1>
+        <form action="/filter" method="get">
+            <input autofocus autocomplete="off" class="sWord" name="sWord" type="text" > 
+            <button type="reset">Clear</button>
+        </form>
+        <br>  
+        <div class="list-of-words">
+            {% for word in words %}
+                <span>{{ word.word }} </span>
+            {% endfor %}
+        </div>
     </div>
-
     {# Asynchronous search of the words #}
     <script>
         let input = document.querySelector("input");

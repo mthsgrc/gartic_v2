@@ -1,5 +1,5 @@
 from cs50 import SQL
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def index():
 @app.route("/filter")
 def filter():
     q = request.args.get("sWord")
-    if q:
+    if q != "":
         sWords = db.execute("SELECT * FROM words WHERE word LIKE ?", q + "%")
     else:
         sWords = db.execute("SELECT * FROM words")

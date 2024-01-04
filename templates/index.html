@@ -2,10 +2,11 @@
 
 {% block body %}
     <div class="wrapper">
-        <h1>Gartic Finder</h1>
+        <!-- <h1>Gartic Finder</h1> -->
+        <img class="logo" src="../static/gartic_logo.png" alt="logo" >
         <form action="/filter" method="get">
             <input autofocus autocomplete="off" class="sWord" name="sWord" type="text" > 
-            <button type="reset">Clear</button>
+            <button class="clear-btn" type="reset">Clear</button>
         </form>
         <br>  
         <div class="list-of-words">

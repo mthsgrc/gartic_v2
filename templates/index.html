@@ -23,6 +23,7 @@
             let response = await fetch("/filter?sWord=" + input.value.replaceAll(" ", "_"));
             let words = await response.text();
             document.querySelector(".list-of-words").innerHTML = words; 
+            wordCopyListener();
         };
 
         function clearFilter() {
@@ -30,6 +31,7 @@
             input.focus();
             input.value = "";
             filterWords();
+            wordCopyListener();
         };
 
         function wordCopyListener() {
@@ -38,7 +40,6 @@
               word.addEventListener("click", () => navigator.clipboard.writeText(word.innerText));
             });
           }
-          
           wordCopyListener();
     </script>
 

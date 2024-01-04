@@ -32,6 +32,14 @@
             filterWords();
         };
 
+        function wordCopyListener() {
+            let wordOfList = document.querySelectorAll("span.each-word");
+            wordOfList.forEach((word) => {
+              word.addEventListener("click", () => navigator.clipboard.writeText(word.innerText));
+            });
+          }
+          
+          wordCopyListener();
     </script>
 
 {% endblock body %}

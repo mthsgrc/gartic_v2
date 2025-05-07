@@ -258,6 +258,8 @@ body {
   min-height: 100vh;
 }
 
+/* ====== My Styles ======  */
+
 .wrapper {
   height: 100vh;
   margin: 0 auto;
@@ -297,6 +299,15 @@ body {
 }
 
 .logo {
-  min-width: 33%;
+  max-width: 40%;
   height: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form {
+  margin-right: 5%;
 }

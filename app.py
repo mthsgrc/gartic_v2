@@ -9,6 +9,10 @@ db = SQL("sqlite:///words.db")
 def index():
     words = db.execute("SELECT * FROM words")
     return render_template("index.html", words=words)
+
+@app.route("/login")
+def login():
+    return    
     
 @app.route("/filter")
 def filter():

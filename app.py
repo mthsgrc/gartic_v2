@@ -19,8 +19,7 @@ def login():
     for user in users:
         if name not in user["username"]:
             return render_template("error.html", message="User not in Database")
-        else:
-            return render_template("success.html")
+    return render_template("words-panel.html")
     
 
 @app.route("/filter")
@@ -31,3 +30,12 @@ def filter():
     else:
         sWords = db.execute("SELECT * FROM words")
     return render_template("filter.html", words=sWords)
+
+
+@app.route("/words-panel", methods=["POST"])
+def wordspanel():
+    if request.form.get("addWord") != "":
+        print(request.form.get("addWord"))
+        return "Add?"
+    else:
+        return "Delete?"

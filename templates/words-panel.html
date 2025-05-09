@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <form action="/words-panel" method="post">
+        <input type="text" name="addword" placeholder="Add an word">
+        <input type="text" name="delword" placeholder="Delete an word">
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <a href="/">Return</a>
+
+{% endblock body %}
